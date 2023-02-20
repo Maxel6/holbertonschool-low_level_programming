@@ -3,9 +3,12 @@
 #include <time.h>
 /* more headers goes there */
 
-/* betty style doc for function main goes there 
- *Main function allow a random value to n and print possitive, negative or zero
+/**
+ * main - Entry point
+ * Print positive, negative or zero for a random value
+ * Return: Always 0 (Success)
  */
+
 int main(void)
 {
 	int n;
