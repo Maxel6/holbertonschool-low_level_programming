@@ -1,4 +1,3 @@
-#include "main.h"
 void times_table(void)
 {
 	int x = 0;
@@ -19,17 +18,18 @@ void times_table(void)
 					_putchar(' ');
 				}
 				else
-				{	
+				{
 					_putchar(res / 10 + '0');
 					_putchar(res % 10 + '0');
 					_putchar(',');
 					_putchar(' ');
 				}
 
-			}	
+			}
 			else
 				_putchar('\n');
 
 		}
 	}
 }
+
