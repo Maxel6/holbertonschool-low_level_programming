@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdio.h>
+#include "_putchar.c"
 /**
  * void function print_alphabet without sets
  * print the alphabet with putchar
