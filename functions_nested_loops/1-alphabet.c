@@ -1,3 +1,4 @@
+#include "main.h"
 #include <stdio.h>
 /**
  * void function print_alphabet without sets
