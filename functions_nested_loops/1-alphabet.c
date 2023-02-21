@@ -1,15 +1,4 @@
-#include "main.h"
-
-/**
- * main - check the code
- * call Print_alphabet function
- * Return: Always 0.
- */
-int main(void)
-{
-	print_alphabet();
-	return (0);
-}
+#include <stdio.h>
 /**
  * void function print_alphabet without sets
  * print the alphabet with putchar
@@ -17,11 +6,23 @@ int main(void)
  */
 void print_alphabet(void)
 {
-	char i;
+        char i;
 
-	for (i = 'a'; i <= 'z'; i++)
-	{
-		putchar(i);
-	}
-	putchar('\n');
+        for (i = 'a'; i <= 'z'; i++)
+        {
+                putchar(i);
+        }
+        putchar('\n');
+}
+
+/**
+ * main - check the code
+ * call Print_alphabet function
+ * Return: Always 0.
+ */
+
+int main(void)
+{
+	print_alphabet();
+	return (0);
 }
