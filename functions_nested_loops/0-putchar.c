@@ -2,14 +2,13 @@
 #include "main.h"
 /* more headers goes there */
 /**
- * main - Entry point
- * print _putchar using putchar()
+ * main - print _putchar using _putchar()
  * Return: Always 0 (Success)
  */
 
 int main(void)
 {
-	putchar('_');
+	_putchar('_');
 	_putchar('p');
 	_putchar('u');
 	_putchar('t');

@@ -1,9 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * void function print_alphabet without sets
- * print the alphabet with _putchar
- * no return
+ * print_alphabet - print the alphabet
  */
 void print_alphabet(void)
 {
