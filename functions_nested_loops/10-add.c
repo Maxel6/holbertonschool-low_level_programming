@@ -7,5 +7,5 @@
  */
 int add(int a, int b)
 {
-	retur n(a + b);
+	return (a + b);
 }
