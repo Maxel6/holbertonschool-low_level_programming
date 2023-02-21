@@ -12,19 +12,8 @@ void print_alphabet(void)
 
         for (i = 'a'; i <= 'z'; i++)
         {
-                putchar(i);
+                _putchar(i);
         }
-        putchar('\n');
+	_putchar('\n');
 }
 
-/**
- * main - check the code
- * call Print_alphabet function
- * Return: Always 0.
- */
-
-int main(void)
-{
-	print_alphabet();
-	return (0);
-}
