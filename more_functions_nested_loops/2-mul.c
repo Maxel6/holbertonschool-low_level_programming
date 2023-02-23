@@ -1,5 +1,5 @@
 /**
- * add - add two itegers
+ * mul - add multiplies itegers
  * @a: 1st number to multiplies with
  * @b: 2nd number
  * Return: the result of the multiplies
