@@ -4,7 +4,7 @@
  *Return: 1 if is uppercase 0 else
  */
 #include "main.h"
-int _isupper(int c);
+int _isupper(int c)
 {
 	if (n >= 'A' && n <= 'Z')
 		c = 1;
