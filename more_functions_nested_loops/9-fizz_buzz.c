@@ -25,7 +25,7 @@ int main(void)
 		}
 		if (i != 100)
 			putchar(' ');
-		else 
+		else
 			putchar('\n');
 	}
 	return (0);
