@@ -6,7 +6,7 @@ void print_numbers(void)
 {
 	int idx;
 
-	for (idx = 0; idx < 10; idx++)
+	for (idx = 8; idx < 10; idx++)
 	{
 		_putchar(idx +  '0');
 	}
