@@ -23,7 +23,10 @@ int main(void)
 		{
 			printf("%d", i);
 		}
-		putchar(' ');
+		if (i =! 99)
+			putchar(' ');
+		else 
+			putchar('\n');
 	}
 	return (0);
 
