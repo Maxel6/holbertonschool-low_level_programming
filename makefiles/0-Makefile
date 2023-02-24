@@ -1,4 +1,2 @@
-CC=gcc
-CFLAGS=-Wall -Wextra -Werror
-school: main.c functions.c
-$(CC) $(CFLAGS) main.c functions.c -o school
+all:
+	gcc main.c school.c -o school
