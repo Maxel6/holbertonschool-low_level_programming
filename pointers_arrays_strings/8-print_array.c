@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * print array - print all ints on an array
+ * print_array - print all ints on an array
  * @a: an int of the array
  * @n: the number of elements of the array
  */
