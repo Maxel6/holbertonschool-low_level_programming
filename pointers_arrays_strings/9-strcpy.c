@@ -1,8 +1,9 @@
 #include "main.h"
 /**
- * _strcpy copy a string
+ * _strcpy - copy a string
  * @src: point to strng to copy
  * @dest: the buffur contains the copy
+ * Return: the 2nd buffer
  */
 char *_strcpy(char *dest, char *src)
 {
