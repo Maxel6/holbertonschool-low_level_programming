@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- *_puts - print only pair
+ *puts2 - print only pair
  *@str: is a char of the string we want print
  */
 void puts2(char *str)
