@@ -1,3 +1,4 @@
+void reverse_array(int *a, int n);
 char *_strncat(char *dest, char *src, int n);
 void reset_to_98(int *n);
 void swap_int(int *a, int *b);
