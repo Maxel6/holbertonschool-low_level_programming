@@ -1,4 +1,11 @@
 #include "main.h"
+/**
+ * _strncat - copy n char a the end of dest
+ * @dest: is the destination
+ * @src: is the sring source
+ * @n: the number of char to copy
+ * Return: dest, the result
+ */
 char *_strncat(char *dest, char *src, int n)
 {
 	int len = 0;
