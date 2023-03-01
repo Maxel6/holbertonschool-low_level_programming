@@ -1,8 +1,8 @@
 #include "main.h"
 /**
- * _memset -fills memory with a constant byte.
+ * _memcpy - function that copies memory area
  * @dest: the destination string
- * @str: the source string
+ * @src: the source string
  * @n: is the number of of bytes to modify
  * Return: the new string
  */
