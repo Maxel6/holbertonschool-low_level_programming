@@ -1,13 +1,15 @@
 #include "main.h"
 /**
- * _strsnp - gets the length of a prefix substring.
- * @accept: the chars accepted
- * @s:
+ *_strstr - that locates a substring
+ * @needle: the chars accepted
+ * @haystack:the string to compare
+ * Return: a pointer to the beginning of the located substring 0 else
  */
 char *_strstr(char *haystack, char *needle)
 {
 	unsigned int i;
 	int match;
+
 	for (; *haystack != '\0'; haystack++)
 	{
 		match = 0;
