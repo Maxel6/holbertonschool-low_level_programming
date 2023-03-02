@@ -17,5 +17,5 @@ void print_diagsums(int *a, int size)
 		d1 += a[i * size + i];
 		d2 += a[i * size + j];
 	}
-	printf("%d, %d\n", diag1, diag2);
+	printf("%d, %d\n", d1, d2);
 }
