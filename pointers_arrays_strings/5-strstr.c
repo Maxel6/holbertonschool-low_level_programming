@@ -4,26 +4,23 @@
  * @accept: the chars accepted
  * @s:
  */
-unsigned int _strspn(char *s, char *accept)
+char *_strstr(char *haystack, char *needle)
 {
 	unsigned int i;
-	unsigned int j;
-	unsigned int res = 0;
 	int match;
-	for (j = 0; s[j] != '\0'; j++)
+	for (; *haystack != '\0'; haystack++)
 	{
 		match = 0;
-		for (i = 0; accept[i] != '\0'; i++)
+		for (i = 0; needle[i] != '\0'; i++)
 		{
-			if (s[j] == accept[i])
+			if (*(haystack + i) != needle[i])
 			{
 				match = 1;
 				break;
 			}
 		}
 		if (match == 0)
-			break;
-		res++;
+			return (haystack);
 	}
-	return (res);
+	return (0);
 }
