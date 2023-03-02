@@ -1,12 +1,15 @@
 #include "main.h"
 /**
- * _strsnp - gets the length of a prefix substring.
+ * _strpbrk - gets the length of a prefix substring.
  * @accept: the chars accepted
- * @s:
+ * @s: the string to compare
+ * Return: the suit of the sting
  */
+
 char *_strpbrk(char *s, char *accept)
 {
 	unsigned int i;
+
 	for (; *s != '\0'; s++)
 	{
 		for (i = 0; accept[i] != '\0'; i++)
