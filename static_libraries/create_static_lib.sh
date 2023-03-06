@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -c *.c -o a.o | ar -rsc a.a a.o
+gcc -c *.c -o liball.o | ar -rsc liball.a liball.o
