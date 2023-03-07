@@ -17,12 +17,13 @@ int main(int argc, char *argv[])
 		printf("0\n");
 		return (1);
 	}
-	if (argc > 2 && atoi(argv[3]) == 9)
-	{
-		printf("Error\n");
-		return (1);
+	if(argc == 4){
+		if (atoi(argv[3]) == 9)
+		{
+			printf("Error\n");
+			return (1);
+		}
 	}
-
 	for (i = 1; i < argc; i++)
 	{
 		tmp = atoi(argv[i]);
