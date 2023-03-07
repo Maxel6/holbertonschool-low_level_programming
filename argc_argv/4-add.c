@@ -17,7 +17,8 @@ int main(int argc, char *argv[])
 		printf("0\n");
 		return (1);
 	}
-	if(argc == 4){
+	if (argc == 5)
+	{
 		if (atoi(argv[3]) == 9)
 		{
 			printf("Error\n");
