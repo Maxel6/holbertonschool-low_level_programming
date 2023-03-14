@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 /**
- *free_grind - free a grind
+ *free_grid - free a grind
  *@grid: the array to free
  *@height: the height of the array
  */
