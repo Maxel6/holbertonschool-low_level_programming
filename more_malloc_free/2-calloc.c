@@ -3,16 +3,18 @@
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	unsigned int *p = 0;
+	char *p = 0;
+	unsigned i = 0;
+
 	if (size == 0 || nmemb == 0)
 		return (0);
 	p = malloc(nmemb * size);
 	if (p == 0)
 		return (0);
-	while (p < size)
+	while(i <= nmemb)
 	{
-		*p = 0;
-		p++;
+		p[i] = 0;
+		i++;
 	}
 	return (p);
 }
