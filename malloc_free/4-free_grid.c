@@ -2,7 +2,7 @@
 #include <stdlib.h>
 /**
  *free_grind - free a grind
- *@grind: the array to free
+ *@grid: the array to free
  *@height: the height of the array
  */
 void free_grid(int **grid, int height)
