@@ -4,7 +4,7 @@
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	int *p = 0;
-	int i;	
+	unsigned int i;
 	if (size == 0 || nmemb == 0)
 		return (0);
 	p = malloc(nmemb * size);
