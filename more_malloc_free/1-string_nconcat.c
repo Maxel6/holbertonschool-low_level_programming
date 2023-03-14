@@ -1,5 +1,12 @@
 #include "main.h"
 #include <stdlib.h>
+/**
+ * string_nconcat - concatenates two strings
+ * @s1: string source 1
+ * @s2: string source 2
+ * @n: number of char from s2 to copy
+ * Return: the result of the concat
+ */
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
