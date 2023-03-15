@@ -17,8 +17,6 @@ int *array_range(int min, int max)
 	for (i = min; i <= max; i++, j++)
 	{
 		p[j] = i;
-		printf("%d\n", p[j]);
-
 	}
 	return (p);
 
