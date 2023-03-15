@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 int *array_range(int min, int max)
 {
@@ -13,9 +14,11 @@ int *array_range(int min, int max)
 	p = malloc(sizeof(int) * size);
 	if (p == 0)
 		return (0);
-	for (i = min; i >= max; i++, j++)
+	for (i = min; i <= max; i++, j++)
 	{
 		p[j] = i;
+		printf("%d\n", p[j]);
+
 	}
 	return (p);
 
