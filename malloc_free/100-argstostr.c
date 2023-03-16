@@ -27,9 +27,9 @@ char *argstostr(int ac, char **av)
 		if (dest == 0)
 			return (0);
 
-		for (i = 0; i < ac; i++, j++)
+		for (j = 0, i = 0; i < ac; i++, j++)
 		{
-			for (j = 0, avsize = 0; av[i][avsize] != '\0'; avsize++, j++)
+			for (avsize = 0; av[i][avsize] != '\0'; avsize++, j++)
 			{
 				dest[j] = av[i][avsize];
 			}
