@@ -3,7 +3,9 @@
 #include <stdlib.h>
 /**
  * argstostr - concatenates all the arguments of your program
- *
+ * @av: arguments of the program
+ * @ac: number of arguments
+ * Return: dest string 0 if fail
  */
 
 char *argstostr(int ac, char **av)
@@ -21,7 +23,7 @@ char *argstostr(int ac, char **av)
 			len++;
 		len++;
 	}
-	dest = malloc(sizeof(char) * ((avsize + ac) + 1));
+	dest = malloc(sizeof(char) * len + 1);
 	if (dest == 0)
 		return (0);
 	for (j = 0, i = 0; i < ac; i++)
