@@ -1,18 +1,24 @@
 #include "dog.h"
 #include <stdio.h>
 #include <stdlib.h>
+/**
+ * new_dog - create a new dog struct
+ * @name: new dog name
+ * @age: new dog age
+ * @owner: new dog owner
+ * Return: dog_t type pointer with input parameter
+ */
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	int namelen = 0, owlen = 0, i = 0;
 	dog_t *dog = malloc(sizeof(dog_t));
-	
+
 	if (dog == NULL)
 		return (NULL);
 	while (owner[owlen])
 		owlen++;
 	while (name[namelen])
 		namelen++;
-	
 	dog->name = malloc(sizeof(char) * namelen + 1);
 	dog->owner = malloc(sizeof(char) * owlen + 1);
 	if (dog->name == NULL || dog->owner == NULL)
