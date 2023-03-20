@@ -17,7 +17,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	cpowner = malloc(sizeof(char) * owlen + 1);
 	dog->name = malloc(sizeof(char) * namelen + 1);
 	dog->owner = malloc(sizeof(char) * owlen + 1);
-	if (cpname == NULL || cpowner == NULL || dog->name == NULL || dog->owner == NULL)
+	if (cpname == NULL || cpowner == NULL || dog->name == NULL || dog->owner == NULL)
 		return (NULL);
 	for (i = 0; i < owlen; i++)
 		cpowner[i] = owner[i];
