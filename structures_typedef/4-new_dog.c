@@ -3,21 +3,28 @@
 #include <stdlib.h>
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	char *cpname = NULL;
-	char *cpowner = NULL;
-	int namelen = 0;
-	int owlen = 0;
-	int i;
+	char *cpname = NULL, char *cpowner = NULL;
+	int namelen = 0, int owlen = 0, int i;
 	dog_t *dog = malloc(sizeof(dog_t));
-
+	
+	if (dog == NULL)
+		return (NULL);
 	while (owner[owlen])
 		owlen++;
 	while (name[namelen])
 		namelen++;
         cpname = malloc(sizeof(char) * namelen + 1);
-        cpowner = malloc(sizeof(char) * owlen + 1);
+	if (cpname = NULL)
+		return (NULL);
+	cpowner = malloc(sizeof(char) * owlen + 1);
+	if (cpowner = NULL)
+                return (NULL);
 	dog->name = malloc(sizeof(char) * namelen + 1);
+	if (dog->name == NULL)
+		return (NULL);
 	dog->owner = malloc(sizeof(char) * owlen + 1);
+	if (dog->owner == NULL)
+                return (NULL);
 	for (i = 0; i < owlen; i++)
 		cpowner[i] = owner[i];
 	cpowner[i] = 0;
