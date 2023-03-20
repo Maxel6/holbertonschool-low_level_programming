@@ -33,6 +33,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 	cpname[i] = 0;
 	if (dog == NULL)
 	{
+		free(dog->name);
+		free(dog->owner);
 		free(cpname);
 		free(cpowner);
 		free(dog);
