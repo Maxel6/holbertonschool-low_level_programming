@@ -3,8 +3,8 @@
 #include <stdlib.h>
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	char *cpname = NULL, char *cpowner = NULL;
-	int namelen = 0, int owlen = 0, int i;
+	char *cpname = NULL, *cpowner = NULL;
+	int namelen = 0, owlen = 0, i = 0;
 	dog_t *dog = malloc(sizeof(dog_t));
 	
 	if (dog == NULL)
@@ -14,10 +14,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 	while (name[namelen])
 		namelen++;
         cpname = malloc(sizeof(char) * namelen + 1);
-	if (cpname = NULL)
+	if (cpname == NULL)
 		return (NULL);
 	cpowner = malloc(sizeof(char) * owlen + 1);
-	if (cpowner = NULL)
+	if (cpowner == NULL)
                 return (NULL);
 	dog->name = malloc(sizeof(char) * namelen + 1);
 	if (dog->name == NULL)
