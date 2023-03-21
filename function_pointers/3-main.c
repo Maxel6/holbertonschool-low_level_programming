@@ -7,15 +7,20 @@ int main(int argc ,char **argv)
 	int (*p)(int, int);
 
 	if (argc != 4)
+	{
+		printf("Error\n");
 		exit(98);
+	
+	}
 	if (b == 0 && (*argv[2] == '%' || *argv[2] == '/'))
 	{
+		printf("Error\n");
 		exit(100);
 	}
 	p = get_op_func(argv[2]);
 	if (p == NULL)
 	{
-		printf("99");
+		printf("Error\n");
 		exit(99);
 	}
 	res = p(a, b);
