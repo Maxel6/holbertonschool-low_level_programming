@@ -1,8 +1,8 @@
 #include "3-calc.h"
 int main(int argc, char **argv)
 {
-	int a = atoi(argv[1]);
-	int b = atoi(argv[3]);
+	int a = 0;
+	int b = 0;
 	int res = 0;
 	int (*p)(int, int);
 
@@ -11,6 +11,8 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit(98);	
 	}
+	a = atoi(argv[1]);
+        b = atoi(argv[3]);
 	if (b == 0 && (*argv[2] == '%' || *argv[2] == '/'))
 	{
 		printf("Error\n");
