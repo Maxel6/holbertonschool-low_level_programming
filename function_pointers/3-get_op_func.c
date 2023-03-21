@@ -12,12 +12,13 @@ int (*get_op_func(char *s))(int, int)
 	};
 	int i;
 
-	while (i < 12)
+	while (i < 6)
 	{
-		if (s == ops[i])
-			return (ops[i][1]);
+		if (s[i] == *ops[i].op)
+			return (*ops[i].f);
 		i++;
 	}
+	return (NULL);
 
 
 }

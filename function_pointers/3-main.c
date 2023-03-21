@@ -1,2 +1,5 @@
 #include "3-calc.h"
-int main(char **argc, int argc)
+int main(__attribute__((unused)) int argc , __attribute__((unused)) char **argv)
+{
+	return (0);
+}
