@@ -4,6 +4,7 @@ int main(int argc ,char **argv)
 	int a = atoi(argv[1]);
 	int b = atoi(argv[3]);
 	int res = 0;
+	int (*p)(int, int);
 
 	if (argc != 4)
 		exit(98);
@@ -11,7 +12,7 @@ int main(int argc ,char **argv)
 	{
 		exit(100);
 	}
-	int (*p)(int, int) = get_op_func(argv[2]);
+	p = get_op_func(argv[2]);
 	if (p == NULL)
 	{
 		printf("99");
