@@ -11,16 +11,13 @@ int main(int argc ,char **argv)
 	{
 		exit(100);
 	}
-	if (argc == 4)
+	int (*p)(int, int) = get_op_func(argv[2]);
+	if (p == NULL)
 	{
-		int (*p)(int, int) = get_op_func(argv[2]);
-		if (p == NULL)
-		{
-			printf("99");
-			exit(99);
-		}
-		res = p(a, b);
-		printf("%d\n", res);
+		printf("99");
+		exit(99);
 	}
+	res = p(a, b);
+	printf("%d\n", res);
 	return (0);
 }
