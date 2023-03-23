@@ -70,11 +70,8 @@ void print_all(const char * const format, ...)
 			com = "";
 			while (typ[y].form != 0)
 			{
-				if (format[i] == typ[y].form)
-				{
-					typ[y].f(list);
-					com = ", ";
-				}
+				typ[y].f(list);
+				com = ", ";
 				y++;
 			}
 			i++;
