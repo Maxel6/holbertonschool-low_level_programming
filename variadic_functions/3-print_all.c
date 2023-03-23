@@ -5,9 +5,7 @@
  */
 void charf(va_list c)
 {
-	int lettre = va_arg(c, int);
-
-	printf("%c", lettre);
+	printf("%c", va_arg(c, int));
 }
 /**
  * floatf - print a float
@@ -15,9 +13,7 @@ void charf(va_list c)
  */
 void floatf(va_list f)
 {
-	double fl = va_arg(f, double);
-
-	printf("%f", fl);
+	printf("%f", va_arg(f, double));
 }
 /**
  * intf - print an integer
@@ -25,9 +21,7 @@ void floatf(va_list f)
  */
 void intf(va_list i)
 {
-	int num = va_arg(i, int);
-
-	printf("%d", num);
+	printf("%d", va_arg(i, int));
 }
 /**
  * strf - print a string
@@ -35,11 +29,11 @@ void intf(va_list i)
  */
 void strf(va_list s)
 {
-	char *str = va_arg(s, char *);
+	char *word = va_arg(s, char *);
 
-	if (str == NULL)
-		str = "(nil)";
-	printf("%s", str);
+	if (s == NULL)
+		word = "(nil)";
+	printf("%s", word);
 }
 /**
  * print_all - prints anything
@@ -48,6 +42,11 @@ void strf(va_list s)
 
 void print_all(const char * const format, ...)
 {
+	int i = 0;
+	int y = 0;
+	va_list list;
+	char *com = "";
+
 	type_t typ[] = {
 		{'c', charf},
 		{'i', intf},
@@ -55,28 +54,23 @@ void print_all(const char * const format, ...)
 		{'s', strf},
 		{0, NULL}
 	};
-	int i = 0;
-	int y = 0;
-	va_list list;
-	char *com = "";
-
-	if (format != NULL)
+	va_start(list, format);
+	while (format && format[i])
 	{
-		va_start(list, format);
-		while (format[i])
+		y = 0;
+		printf("%s", com);
+		com = "";
+		while (typ[y].form)
 		{
-			y = 0;
-			printf("%s", com);
-			com = "";
-			while (typ[y].form != 0)
+			if (typ[y].form == format[i])
 			{
 				typ[y].f(list);
 				com = ", ";
-				y++;
 			}
-			i++;
+			y++;
 		}
-		printf("\n");
-		va_end(list);
+		i++;
 	}
+	printf("\n");
+	va_end(list);
 }
