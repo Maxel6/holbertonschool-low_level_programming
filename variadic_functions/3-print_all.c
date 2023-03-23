@@ -24,9 +24,9 @@ void intf(va_list i)
 void strf(va_list s)
 {
 	char *str = va_arg(s, char *);
-	/*if (str == NULL)
+	if (str == NULL)
 		printf("(nil)");
-	else*/
+	else
 		printf("%s", str);
 }
 void print_all(const char * const format, ...)
@@ -41,19 +41,21 @@ void print_all(const char * const format, ...)
 	int i = 0;
 	int y = 0;
 	va_list list;
+	char *com = "";
 
 	va_start(list, format);
 
-	while (format[i])
+	while (format[i] && format)
 	{
 		y = 0;
+		printf("%s", com);
+		com = "";
 		while (typ[y].form)
 		{
 			if (format[i] == typ[y].form)
 			{
 				typ[y].f(list);
-				if (format[i + 1] != '\0')
-					printf(", ");
+				com = ", ";
 			}
 			y++;
 		}
