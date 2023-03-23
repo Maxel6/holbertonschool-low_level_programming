@@ -24,9 +24,9 @@ void intf(va_list i)
 void strf(va_list s)
 {
 	char *str = va_arg(s, char *);
-	if (str == NULL)
+	/*if (str == NULL)
 		printf("(nil)");
-	else
+	else*/
 		printf("%s", str);
 }
 void print_all(const char * const format, ...)
