@@ -15,5 +15,10 @@ void intf(va_list);
 void floatf(va_list);
 void stringf(va_list);
 
+typedef struct type
+{
+        char form;
+        void (*f)(va_list);
+}type_t;
 
 #endif
