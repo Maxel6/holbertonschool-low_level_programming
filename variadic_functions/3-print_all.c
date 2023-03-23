@@ -67,7 +67,7 @@ void print_all(const char * const format, ...)
 		y = 0;
 		printf("%s", com);
 		com = "";
-		while (typ[y].form)
+		while (typ[y].form != 0)
 		{
 			if (format[i] == typ[y].form)
 			{
