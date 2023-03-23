@@ -31,7 +31,7 @@ void strf(va_list s)
 {
 	char *word = va_arg(s, char *);
 
-	if (s == NULL)
+	if (word == NULL)
 		word = "(nil)";
 	printf("%s", word);
 }
