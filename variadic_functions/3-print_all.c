@@ -24,7 +24,10 @@ void intf(va_list i)
 void strf(va_list s)
 {
 	char *str = va_arg(s, char *);
-	printf("%s", str);
+	if (str == NULL)
+		printf("(nil)");
+	else
+		printf("%s", str);
 }
 void print_all(const char * const format, ...)
 {
@@ -50,7 +53,7 @@ void print_all(const char * const format, ...)
 			{
 				typ[y].f(list);
 				if (format[i + 1] != '\0')
-				 printf(", ");
+					printf(", ");
 			}
 			y++;
 		}
