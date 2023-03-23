@@ -60,24 +60,26 @@ void print_all(const char * const format, ...)
 	va_list list;
 	char *com = "";
 
-	va_start(list, format);
-
-	while (format[i] != '\0' && format != NULL)
+	if (format != NULL)
 	{
-		y = 0;
-		printf("%s", com);
-		com = "";
-		while (typ[y].form != 0)
+		va_start(list, format);
+		while (format[i])
 		{
-			if (format[i] == typ[y].form)
+			y = 0;
+			printf("%s", com);
+			com = "";
+			while (typ[y].form != 0)
 			{
-				typ[y].f(list);
-				com = ", ";
+				if (format[i] == typ[y].form)
+				{
+					typ[y].f(list);
+					com = ", ";
+				}
+				y++;
 			}
-			y++;
+			i++;
 		}
-		i++;
+		printf("\n");
+		va_end(list);
 	}
-	printf("\n");
-	va_end(list);
 }
