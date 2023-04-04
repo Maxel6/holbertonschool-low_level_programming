@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- * add_node - create a new node
+ * add_node_end - create a new node
  * @head: is a single linked list of type list_t
  * @str: the string to copy in the new node
  * Return: the new node
