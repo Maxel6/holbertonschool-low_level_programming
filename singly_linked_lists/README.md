@@ -1,10 +1,10 @@
-#C - Singly linked lists
+# C - Singly linked lists
 
-##General
+## General
 When and why using linked lists vs arrays
 How to build and use linked lists
 
-##Requirements
+## Requirements
 Allowed editors: vi, vim, emacs
 All your files will be compiled on Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=gnu89
 All your files should end with a new line
@@ -20,7 +20,7 @@ The prototypes of all your functions and the prototype of the function _putchar 
 Don’t forget to push your header file
 All your header files should be include guarded
 
-##Tasks
+## Tasks
 0. Print list
 1. List length
 2. Add node
