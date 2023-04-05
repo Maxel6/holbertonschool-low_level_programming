@@ -1,10 +1,15 @@
 #include "lists.h"
-
+/**
+ * add_dnodeint_end - create a new node athe the end of head
+ * @head: double linked list
+ * @n: value of the newnode -> n
+ * Return: The adress of the new element
+ */
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
 	dlistint_t *new_node;
 	dlistint_t *tmp;
-	
+
 	new_node = malloc(sizeof(dlistint_t) * 1);
 	if (!new_node)
 		return (NULL);
