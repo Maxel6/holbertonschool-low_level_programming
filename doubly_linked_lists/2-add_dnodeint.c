@@ -12,11 +12,14 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 
 	new_node = malloc(sizeof(dlistint_t) * 1);
 	if (!new_node || !head)
+	{
+		free(new_node);
 		return (NULL);
+	}
 
 	new_node->prev = NULL;
 	new_node->n = n;
-	if (head)
+	if (*head)
 	{
 		new_node->next = *head;
 		(*head)->prev = new_node;
