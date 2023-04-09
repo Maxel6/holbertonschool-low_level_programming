@@ -8,39 +8,39 @@
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-    dlistint_t *new = malloc(sizeof(dlistint_t) * 1);
-    dlistint_t *tmp = *h;
-    dlistint_t *tmp2 = NULL;
-    
-    if (!new)
-    {
-        free(new);
-        printf("!new");
-        return (NULL);
-    }
+	dlistint_t *new = malloc(sizeof(dlistint_t) * 1);
+	dlistint_t *tmp = *h;
+	dlistint_t *tmp2 = NULL;
 
-    if (*h == NULL && idx)
-        return NULL;
+	if (!new)
+	{
+		free(new);
+		printf("!new");
+		return (NULL);
+	}
 
-    if (!idx)
-        return (add_dnodeint(h, n));
+	if (*h == NULL && idx)
+		return (NULL);
 
-   
-    for (; idx != 1; idx--)
-    {
-        if(!tmp->next)
-            return (NULL);
-        tmp = tmp->next;
-    }
-    if (!tmp->next)
-        return (add_dnodeint_end(h, n));
-    
-    tmp2 = tmp->next;
-    tmp->next = new;
-    tmp2->prev = new;
-    new->n = n;
-    new->prev = tmp;
-    new->next = tmp2;
+	if (!idx)
+		return (add_dnodeint(h, n));
 
-    return (new);
+
+	for (; idx != 1; idx--)
+	{
+		if (!tmp->next)
+			return (NULL);
+		tmp = tmp->next;
+	}
+	if (!tmp->next)
+		return (add_dnodeint_end(h, n));
+
+	tmp2 = tmp->next;
+	tmp->next = new;
+	tmp2->prev = new;
+	new->n = n;
+	new->prev = tmp;
+	new->next = tmp2;
+
+	return (new);
 }
