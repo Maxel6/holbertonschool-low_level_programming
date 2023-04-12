@@ -11,8 +11,15 @@ int main(int ac, char **av)
 		    exit(97);
         }
     src = open(av[1], O_RDONLY);
+    if (src == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+		exit(98);
+	}
+
     size = read (src, buffer, 1024);
-    if (src == -1 || size == -1)
+    
+    if (src == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
