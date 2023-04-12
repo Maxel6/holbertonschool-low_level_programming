@@ -16,19 +16,24 @@ int main(int ac, char **av)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
 	}
-    size = read (src, buffer, 1024);
-    if (size == -1)
-    {
-        dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
-        exit(98);
-    }
+    
     dest = open(av[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
     if (dest == -1)
     {
         dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
         exit (99);
     }
-    write(dest, buffer, strlen(buffer));
+    while ((size = read(src, buffer, 1024)) > 0)
+    {
+        if (size == -1)
+        {
+            dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+            exit(98);
+        }
+        write(dest, buffer, strlen(buffer));
+    }
+
+
     close(src);
     close(dest);
     return (0); 
