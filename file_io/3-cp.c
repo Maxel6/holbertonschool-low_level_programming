@@ -5,12 +5,13 @@
  */
 void close_fd(int fd)
 {
-    int flag = close(fd);
-    if (flag == -1)
-    {
-        dprintf(STDERR_FILENO, "Error: Can't close fd %i", flag);
+	int flag = close(fd);
+
+	if (flag == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i", flag);
 		exit(100);
-    }
+	}
 }
 /**
  * cp_buffer - copy a buffer to a dest file
@@ -21,17 +22,17 @@ void close_fd(int fd)
  */
 void cp_buffer(int dest, char buffer[1024], int size, char **av)
 {
-    if (size == -1)
-    {
-        dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+	if (size == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
-    }
+	}
 
-    if (write(dest, buffer, size) == -1)
-    {
+	if (write(dest, buffer, size) == -1)
+	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 		exit(99);
-    }
+	}
 }
 
 
@@ -67,10 +68,10 @@ int main(int ac, char **av)
 	}
 	while ((size = read(src, buffer, 1024)) > 0)
 	{
-        cp_buffer(dest, buffer, size, av);
+		cp_buffer(dest, buffer, size, av);
 	}
 
-    close_fd(src);
-    close_fd(dest);
+	close_fd(src);
+	close_fd(dest);
 	return (0);
 }
