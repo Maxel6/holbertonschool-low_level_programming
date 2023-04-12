@@ -66,7 +66,7 @@ int main(int ac, char **av)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 		exit(99);
 	}
-	while (size =! 0)
+	while (size != 0)
 	{
         size = read(src, buffer, 1024);
 		cp_buffer(dest, buffer, size, av);
