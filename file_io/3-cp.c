@@ -1,5 +1,9 @@
 #include "main.h"
-void close_ex(int fd)
+/**
+ * close_fd - close a file directory
+ * @fd: the file directory to close
+ */
+void close_fd(int fd)
 {
     int flag = close(fd);
     if (flag == -1)
@@ -8,6 +12,13 @@ void close_ex(int fd)
 		exit(100);
     }
 }
+/**
+ * cp_buffer - copy a buffer to a dest file
+ * @dest: the destination file
+ * @buffer: the sting to copy
+ * @size: the number of character to copy, -1 if read fail
+ * @av: program argunents
+ */
 void cp_buffer(int dest, char buffer[1024], int size, char **av)
 {
     if (size == -1)
@@ -59,7 +70,7 @@ int main(int ac, char **av)
         cp_buffer(dest, buffer, size, av);
 	}
 
-    close_ex(src);
-    close_ex(dest);
+    close_fd(src);
+    close_fd(dest);
 	return (0);
 }
