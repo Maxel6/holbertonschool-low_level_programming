@@ -68,7 +68,7 @@ int main(int ac, char **av)
 	}
 	while (size != 0)
 	{
-        size = read(src, buffer, 1024);
+		size = read(src, buffer, 1024);
 		cp_buffer(dest, buffer, size, av);
 	}
 
