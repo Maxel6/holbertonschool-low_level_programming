@@ -44,7 +44,7 @@ void cp_buffer(int dest, char buffer[1024], int size, char **av)
  */
 int main(int ac, char **av)
 {
-	int src, dest, size = 0;
+	int src, dest, size = 1;
 	char buffer[1024];
 
 	if (ac != 3)
@@ -66,8 +66,9 @@ int main(int ac, char **av)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 		exit(99);
 	}
-	while ((size = read(src, buffer, 1024)) > 0)
+	while (size =! 0)
 	{
+        size = read(src, buffer, 1024);
 		cp_buffer(dest, buffer, size, av);
 	}
 
