@@ -8,6 +8,22 @@ void close_ex(int fd)
 		exit(100);
     }
 }
+void cp_buffer(int dest, char buffer[1024], int size, char **av)
+{
+    if (size == -1)
+    {
+        dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+		exit(98);
+    }
+
+    if (write(dest, buffer, size) == -1)
+    {
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
+		exit(99);
+    }
+}
+
+
 /**
  * main - copie the content of a file to another file
  * @av: arguments of the program
@@ -24,7 +40,8 @@ int main(int ac, char **av)
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	src = open(av[1], O_RDONLY);
+
+	src = open(av[1], O_RDONLY, 0664);
 	if (src == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
@@ -37,14 +54,12 @@ int main(int ac, char **av)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 		exit(99);
 	}
-
 	while ((size = read(src, buffer, 1024)) > 0)
 	{
-		write(dest, buffer, size);
+        cp_buffer(dest, buffer, size, av);
 	}
 
     close_ex(src);
     close_ex(dest);
-
 	return (0);
 }
