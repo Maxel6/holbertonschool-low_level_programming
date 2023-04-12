@@ -8,7 +8,6 @@ void close_ex(int fd)
 		exit(100);
     }
 }
-
 /**
  * main - copie the content of a file to another file
  * @av: arguments of the program
