@@ -5,26 +5,26 @@ int main(int ac, char **av)
     int src, dest, size;
     char buffer[1024];
 
-    if (ac != 3)
-        {
+    if (ac != 3)      
+    {
             dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		    exit(97);
-        }
-    src = open(av[1], O_RDONLY);
-    if (src == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
-		exit(98);
-	}
+    }
 
-    size = read (src, buffer, 1024);
+    src = open(av[1], O_RDONLY);
     
     if (src == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
 	}
-    printf("buffer = %s\n", buffer);
+    size = read (src, buffer, 1024);
+    if (size == -1)
+    {
+        dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+        exit(98);
+    }
+
     dest = open(av[2], O_CREAT | O_RDWR | O_TRUNC);
     if (dest == -1)
     {
