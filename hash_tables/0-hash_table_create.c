@@ -8,5 +8,8 @@ hash_table_t *hash_table_create(unsigned long int size)
     
     ht->size = size;
 
+    while (ht->array)
+        ht->array = NULL;
+
     return (ht);
 }
