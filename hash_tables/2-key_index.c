@@ -1,7 +1,7 @@
 #include "hash_tables.h"
 /**
- * key_index - return the index of a key 
- * 
+ * key_index - return the index of a key
+ *
  * @key: the key
  * @size: the size of the array of the hash table
  * Return: unsigned long int key
