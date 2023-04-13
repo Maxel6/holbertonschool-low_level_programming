@@ -5,7 +5,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int index = key_index((const unsigned char *)key, ht->size);
 	hash_node_t *new;
 	char *cp_value = strdup(value);
-	int i = 0;
 
 	new = malloc(sizeof(hash_node_t *) * ht->size);
 	if (ht->array[index] == NULL)
