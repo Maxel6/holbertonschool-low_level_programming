@@ -2,17 +2,20 @@
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int index = key_index((const unsigned char *)key, ht->size);
+	unsigned long int index;
 	hash_node_t *new;
 	char *cp_value = strdup(value);
-
+    
+    index = key_index((const unsigned char *)key, ht->size);
 	new = malloc(sizeof(hash_node_t *) * ht->size);
-	if (ht->array[index] == NULL)
+
+	if (new == NULL)
 		return (0);
+        
 	new->value = cp_value;
 	new->key = (char *)key;
 
-	while (ht->array[index]->next)
+	while (ht->array[index])
 	{
 		if (strcmp(ht->array[index]->key, key) == 0)
 		{
