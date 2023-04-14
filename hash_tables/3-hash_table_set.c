@@ -22,14 +22,21 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 
 	new->value = strdup(value);
-	new->key = (char *)key;
+	new->key = strdup(key);
 
 	if (ht->array[index])
 	{
-		tmp = key_index((const unsigned char *)ht->array[index]->key, ht->size);
+		if (strcmp(key, ht->array[index]->key) == 0)
+		{
+			ht->array[index]->value = (char *)value;
+		}
+		else
+		{
+			tmp = key_index((const unsigned char *)ht->array[index]->key, ht->size);
 
-		if (index == tmp)
-			new->next = ht->array[index];
+			if (index == tmp)
+				new->next = ht->array[index];
+		}
 	}
 	ht->array[index] = new;
 	return (1);
