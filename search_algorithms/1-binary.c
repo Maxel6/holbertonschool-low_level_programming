@@ -2,17 +2,16 @@
 
 int binary_search(int *array, size_t size, int value)
 {
-	int l = 0, h = (int)size - 1, m = (h - l) / 2, ll, hh;
+	int l = 0, h = (int)size - 1, m = (h - l) / 2, i;
 
 	while (l <= h)
 	{
 		printf("Searching in array: %d", array[l]);
-		ll = l+1, hh = h;
-		while (ll <= hh)
+		for (i = l + 1; i <= h; i++)
 		{
-			printf(", %d", ll);
-			ll++;
+			printf(", %d", array[i]);
 		}
+			
 		printf("\n");
 		m = l + (h - l) / 2;
 		if (array[m] == value)
